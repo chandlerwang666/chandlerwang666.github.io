@@ -1,11 +1,235 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-GB">
 <head>
-  <meta charset="UTF-8">
-  <title>Welcome to My Page</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{ Your Name }} — PhD Student, Computer Science</title>
+  <meta name="description" content="{{ One-sentence summary: PhD student at Cardiff University researching computer-vision bruise analysis }}" />
+  <meta name="author" content="{{ Your Name }}" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='80'>🧠</text></svg>">
+  <meta property="og:title" content="{{ Your Name }} — PhD Student" />
+  <meta property="og:description" content="{{ Same as description }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://{{your-github-username}}.github.io/" />
+  <style>
+    :root{
+      --bg: #0b0c0e; --card:#13151a; --text:#eaecef; --muted:#9aa3af; --link:#8ab4ff; --accent:#6ee7b7; --border:#22252d;
+    }
+    :root.light{
+      --bg:#ffffff; --card:#f7f7f9; --text:#0b0c0e; --muted:#586069; --link:#1b66d1; --accent:#0ea5e9; --border:#e5e7eb;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Noto Sans",sans-serif}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1000px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;background:linear-gradient(to bottom,var(--bg),color-mix(in srgb,var(--bg),transparent 30%));backdrop-filter:saturate(140%) blur(8px);z-index:10;border-bottom:1px solid var(--border)}
+    .nav{display:flex;align-items:center;gap:16px;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .avatar{width:44px;height:44px;border-radius:50%;border:2px solid var(--border);object-fit:cover;background:#ddd}
+    .navlinks{display:flex;gap:16px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid var(--border);border-radius:12px;background:var(--card);color:var(--text);text-decoration:none}
+    .btn:hover{transform:translateY(-1px)}
+    .ghost{background:transparent}
+    main section{padding:56px 0;border-bottom:1px dashed var(--border)}
+    h1{font-size:2.2rem;margin:.2rem 0}
+    h2{font-size:1.6rem;margin:0 0 12px}
+    h3{font-size:1.1rem;margin:18px 0 6px}
+    p{margin:0 0 12px}
+    .lead{font-size:1.15rem;color:var(--muted)}
+    .grid{display:grid;gap:16px}
+    @media(min-width:768px){.grid.cols-2{grid-template-columns:1.2fr .8fr}.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px}
+    .kpis{display:flex;gap:14px;flex-wrap:wrap}
+    .kpi{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:10px 12px}
+    .tag{display:inline-block;font-size:.85rem;color:var(--muted);border:1px solid var(--border);border-radius:999px;padding:4px 10px;margin:4px 6px 0 0}
+    .list{margin:0;padding-left:18px}
+    .list li{margin-bottom:10px}
+    .pub{margin-bottom:14px}
+    .pub b{display:block}
+    footer{padding:40px 0;color:var(--muted);text-align:center}
+    .row{display:flex;gap:10px;flex-wrap:wrap}
+    .pill{padding:6px 10px;border:1px solid var(--border);border-radius:999px;color:var(--muted)}
+    .muted{color:var(--muted)}
+    .right{margin-left:auto}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,monospace}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+  </style>
+  <script>
+    // Theme: remember preference
+    const applyTheme = (t)=>document.documentElement.classList.toggle('light', t==='light');
+    const saved = localStorage.getItem('theme'); if(saved) applyTheme(saved);
+    function toggleTheme(){
+      const next = document.documentElement.classList.contains('light') ? 'dark' : 'light';
+      applyTheme(next); localStorage.setItem('theme', next);
+    }
+    // Smooth scroll
+    document.addEventListener('click', e=>{
+      const a = e.target.closest('a[href^="#"]'); if(!a) return;
+      const el = document.querySelector(a.getAttribute('href')); if(!el) return;
+      e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'});
+      history.pushState(null,'',a.getAttribute('href'));
+    });
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"{{ Your Name }}",
+    "affiliation":{"@type":"CollegeOrUniversity","name":"Cardiff University"},
+    "jobTitle":"PhD Student",
+    "url":"https://{{your-github-username}}.github.io/",
+    "sameAs":["{{ Google Scholar URL }}","{{ ORCID URL }}","{{ LinkedIn URL }}","{{ GitHub URL }}"]
+  }
+  </script>
 </head>
 <body>
-  <h1>Hello, I’m Qiming!</h1>
-  <p>This is my personal GitHub Page.</p>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img class="avatar" src="{{ link-to-a-512x512-profile-image-or-remove }}" alt="Avatar" />
+        <div>
+          <strong>{{ Your Name }}</strong><br>
+          <span class="muted">PhD Student · Computer Science · Cardiff University</span>
+        </div>
+      </div>
+      <nav class="navlinks">
+        <a class="pill" href="#about">About</a>
+        <a class="pill" href="#research">Research</a>
+        <a class="pill" href="#publications">Publications</a>
+        <a class="pill" href="#projects">Projects</a>
+        <a class="pill" href="#datasets">Datasets</a>
+        <a class="pill" href="#contact">Contact</a>
+        <button class="pill" onclick="toggleTheme()" aria-label="Toggle theme">🌓 Theme</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about" class="grid cols-2">
+      <div>
+        <h1>{{ Your Name }}</h1>
+        <p class="lead">
+          I’m a PhD student in Computer Science at Cardiff University. My research focuses on
+          computer-vision methods for analysing bruises on human skin, with an emphasis on
+          unsupervised and self-supervised learning (e.g., DINO/DINOv2, CLIP-SAM, LoRA-ViTs).
+        </p>
+        <div class="row" style="margin:14px 0;">
+          <a class="btn" href="{{ link-to-cv.pdf }}" target="_blank" rel="noopener">📄 CV</a>
+          <a class="btn ghost" href="{{ Google Scholar URL }}" target="_blank" rel="noopener">🎓 Scholar</a>
+          <a class="btn ghost" href="{{ GitHub URL }}" target="_blank" rel="noopener">🐙 GitHub</a>
+          <a class="btn ghost" href="{{ LinkedIn URL }}" target="_blank" rel="noopener">🔗 LinkedIn</a>
+        </div>
+        <div class="kpis">
+          <div class="kpi"><b>Research Areas</b><br><span class="muted">Self-supervision · Segmentation · Medical/Forensic AI</span></div>
+          <div class="kpi"><b>Tooling</b><br><span class="muted">PyTorch · ViTs · SAM · HPC</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Keywords</h3>
+        <div>
+          <span class="tag">Bruise analysis</span>
+          <span class="tag">Unsupervised learning</span>
+          <span class="tag">Self-supervised ViT</span>
+          <span class="tag">Segmentation</span>
+          <span class="tag">Weak supervision</span>
+          <span class="tag">Forensic imaging</span>
+        </div>
+        <h3 style="margin-top:16px;">News</h3>
+        <ul class="list">
+          <li><b>{{ Aug 2025 }}</b> — Attended BMVA Computer Vision Summer School.</li>
+          <li><b>{{ 2025 }}</b> — Building bruise datasets & evaluation pipelines.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="research">
+      <h2>Research</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Self-supervised bruise segmentation</h3>
+          <p>Exploring DINO/DINOv2 with LoRA adapters for bruise localisation and mask refinement, benchmarked with IoU/F1 and a dual-circle evaluation.</p>
+          <p class="muted mono">PyTorch · ViT · LoRA · SAM · CLIP-SAM</p>
+        </div>
+        <div class="card">
+          <h3>Dataset curation & evaluation</h3>
+          <p>Curating multi-source bruise imagery; converting to VOC/YOLO/ImageNet styles; reproducible scripts for training and evaluation.</p>
+          <p class="muted mono">HAM10000 · SD-198 · Custom bruise sets</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Selected Publications</h2>
+      <div class="pub">
+        <b>{{ Your Paper Title }}</b>
+        <span class="muted">Author(s). Venue, Year.</span><br>
+        <a href="{{ PDF or DOI }}" target="_blank" rel="noopener">PDF/DOI</a> ·
+        <a href="{{ Code URL }}" target="_blank" rel="noopener">Code</a>
+      </div>
+      <div class="pub">
+        <b>{{ Another Paper Title }}</b>
+        <span class="muted">Author(s). Venue, Year.</span><br>
+        <a href="{{ PDF or DOI }}" target="_blank" rel="noopener">PDF/DOI</a> ·
+        <a href="{{ Project Page }}" target="_blank" rel="noopener">Project</a>
+      </div>
+      <p class="muted">Full list on <a href="{{ Google Scholar URL }}" target="_blank" rel="noopener">Google Scholar</a>.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid cols-3">
+        <article class="card">
+          <h3>LoRA-DINOv2 for Bruises</h3>
+          <p>Parameter-efficient fine-tuning of ViTs for bruise localisation.</p>
+          <a href="{{ GitHub repo }}" class="btn">Repository</a>
+        </article>
+        <article class="card">
+          <h3>CLIP-SAM Pipeline</h3>
+          <p>Text-guided region proposals + SAM refinement for masks.</p>
+          <a href="{{ GitHub repo }}" class="btn">Repository</a>
+        </article>
+        <article class="card">
+          <h3>Dual-Circle Evaluator</h3>
+          <p>Objective bruise mask scoring with inner/outer constraints.</p>
+          <a href="{{ GitHub repo }}" class="btn">Repository</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="datasets">
+      <h2>Datasets</h2>
+      <ul class="list">
+        <li><b>AllBruiseTrainingData</b> — ImageNet/VOC/YOLO formats; <span class="muted">folder structure: Unlabelled/uni_dataset, YOLOAnnotation, circle_mask, dual-circle evaluation</span>. <a href="{{ repo or request-link }}">Access</a></li>
+        <li><b>HAM10000 (processed)</b> — scripts for VOC-style conversion and splits. <a href="{{ repo }}">Repo</a></li>
+        <li><b>SD-198 (processed)</b> — pre-processing and label maps. <a href="{{ repo }}">Repo</a></li>
+      </ul>
+    </section>
+
+    <section id="contact" class="grid cols-2">
+      <div>
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:{{ your-email }}"> {{ your-email }} </a></p>
+        <p>Office: {{ Building/Room }}, Cardiff University</p>
+        <p>ORCID: <a href="{{ ORCID URL }}" target="_blank" rel="noopener">{{ ORCID ID }}</a></p>
+        <p>For collaboration or dataset access, please get in touch.</p>
+      </div>
+      <div class="card">
+        <h3>Quick Links</h3>
+        <p><a href="#about">About</a> · <a href="#research">Research</a> · <a href="#publications">Publications</a> · <a href="#projects">Projects</a> · <a href="#datasets">Datasets</a></p>
+        <p class="muted">© <span id="year"></span> {{ Your Name }}</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Made with plain HTML/CSS/JS. Hosted on GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
