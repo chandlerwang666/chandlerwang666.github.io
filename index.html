@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>{{ Your Name }} — PhD Student, Computer Science</title>
+  <title>{{ Qiming Wang }} — PhD Student, Computer Science</title>
   <meta name="description" content="{{ One-sentence summary: PhD student at Cardiff University researching computer-vision bruise analysis }}" />
-  <meta name="author" content="{{ Your Name }}" />
+  <meta name="author" content="Qiming Wang" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='80'>🧠</text></svg>">
-  <meta property="og:title" content="{{ Your Name }} — PhD Student" />
+  <meta property="og:title" content="Qiming Wang — PhD Student" />
   <meta property="og:description" content="{{ Same as description }}" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://{{your-github-username}}.github.io/" />
@@ -75,7 +75,7 @@
   {
     "@context":"https://schema.org",
     "@type":"Person",
-    "name":"{{ Your Name }}",
+    "name":"{{ Qiming Wang }}",
     "affiliation":{"@type":"CollegeOrUniversity","name":"Cardiff University"},
     "jobTitle":"PhD Student",
     "url":"https://{{your-github-username}}.github.io/",
@@ -89,16 +89,16 @@
       <div class="brand">
         <img class="avatar" src="{{ link-to-a-512x512-profile-image-or-remove }}" alt="Avatar" />
         <div>
-          <strong>{{ Your Name }}</strong><br>
+          <strong>Qiming Wang</strong><br>
           <span class="muted">PhD Student · Computer Science · Cardiff University</span>
         </div>
       </div>
       <nav class="navlinks">
         <a class="pill" href="#about">About</a>
         <a class="pill" href="#research">Research</a>
-        <a class="pill" href="#publications">Publications</a>
+        <!-- <a class="pill" href="#publications">Publications</a>
         <a class="pill" href="#projects">Projects</a>
-        <a class="pill" href="#datasets">Datasets</a>
+        <a class="pill" href="#datasets">Datasets</a> -->
         <a class="pill" href="#contact">Contact</a>
         <button class="pill" onclick="toggleTheme()" aria-label="Toggle theme">🌓 Theme</button>
       </nav>
@@ -108,20 +108,20 @@
   <main class="container">
     <section id="about" class="grid cols-2">
       <div>
-        <h1>{{ Your Name }}</h1>
+        <h1>Qiming Wang</h1>
         <p class="lead">
-          I’m a PhD student in Computer Science at Cardiff University. My research focuses on
-          computer-vision methods for analysing bruises on human skin, with an emphasis on
-          unsupervised and self-supervised learning (e.g., DINO/DINOv2, CLIP-SAM, LoRA-ViTs).
+          I am a PhD student in Computer Science at Cardiff University. My research focuses on
+          computer vision methods for medical forensics, with an emphasis on
+          unsupervised and self-supervised learning (e.g., DINO/DINOv2, CLIP-SAM).
         </p>
         <div class="row" style="margin:14px 0;">
-          <a class="btn" href="{{ link-to-cv.pdf }}" target="_blank" rel="noopener">📄 CV</a>
-          <a class="btn ghost" href="{{ Google Scholar URL }}" target="_blank" rel="noopener">🎓 Scholar</a>
-          <a class="btn ghost" href="{{ GitHub URL }}" target="_blank" rel="noopener">🐙 GitHub</a>
-          <a class="btn ghost" href="{{ LinkedIn URL }}" target="_blank" rel="noopener">🔗 LinkedIn</a>
+          <a class="btn" href="{{ MyCV.pdf }}" target="_blank" rel="noopener">📄 CV</a>
+          <!-- <a class="btn ghost" href="{{ Google Scholar URL }}" target="_blank" rel="noopener">🎓 Scholar</a> -->
+          <a class="btn ghost" href="{{ www.github.com/chandlerwang666 }}" target="_blank" rel="noopener">🐙 GitHub</a>
+          <a class="btn ghost" href="{{ www.linkedin.com/in/qimingwang01 }}" target="_blank" rel="noopener">🔗 LinkedIn</a>
         </div>
         <div class="kpis">
-          <div class="kpi"><b>Research Areas</b><br><span class="muted">Self-supervision · Segmentation · Medical/Forensic AI</span></div>
+          <div class="kpi"><b>Research Areas</b><br><span class="muted">Computer Vision · Deep Learning · Medical/Forensic AI</span></div>
           <div class="kpi"><b>Tooling</b><br><span class="muted">PyTorch · ViTs · SAM · HPC</span></div>
         </div>
       </div>
@@ -132,18 +132,16 @@
           <span class="tag">Unsupervised learning</span>
           <span class="tag">Self-supervised ViT</span>
           <span class="tag">Segmentation</span>
-          <span class="tag">Weak supervision</span>
-          <span class="tag">Forensic imaging</span>
+          <span class="tag">Zero-shot</span>
         </div>
-        <h3 style="margin-top:16px;">News</h3>
+        <h3 style="margin-top:16px;">Activities</h3>
         <ul class="list">
-          <li><b>{{ Aug 2025 }}</b> — Attended BMVA Computer Vision Summer School.</li>
-          <li><b>{{ 2025 }}</b> — Building bruise datasets & evaluation pipelines.</li>
+          <li><b>Aug 2025</b> — <a class="btn" href="{{ 2025_Cardiff_Workshop_Poster.pdf }}" target="_blank" rel="noopener">Poster</a> Presented @ BMVA Computer Vision Summer School.</li>
         </ul>
       </div>
     </section>
 
-    <section id="research">
+    <!-- <section id="research">
       <h2>Research</h2>
       <div class="grid cols-2">
         <div class="card">
@@ -157,9 +155,9 @@
           <p class="muted mono">HAM10000 · SD-198 · Custom bruise sets</p>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <section id="publications">
+    <!-- <section id="publications">
       <h2>Selected Publications</h2>
       <div class="pub">
         <b>{{ Your Paper Title }}</b>
@@ -174,9 +172,9 @@
         <a href="{{ Project Page }}" target="_blank" rel="noopener">Project</a>
       </div>
       <p class="muted">Full list on <a href="{{ Google Scholar URL }}" target="_blank" rel="noopener">Google Scholar</a>.</p>
-    </section>
+    </section> -->
 
-    <section id="projects">
+    <!-- <section id="projects">
       <h2>Projects</h2>
       <div class="grid cols-3">
         <article class="card">
@@ -195,24 +193,24 @@
           <a href="{{ GitHub repo }}" class="btn">Repository</a>
         </article>
       </div>
-    </section>
+    </section> -->
 
-    <section id="datasets">
+    <!-- <section id="datasets">
       <h2>Datasets</h2>
       <ul class="list">
         <li><b>AllBruiseTrainingData</b> — ImageNet/VOC/YOLO formats; <span class="muted">folder structure: Unlabelled/uni_dataset, YOLOAnnotation, circle_mask, dual-circle evaluation</span>. <a href="{{ repo or request-link }}">Access</a></li>
         <li><b>HAM10000 (processed)</b> — scripts for VOC-style conversion and splits. <a href="{{ repo }}">Repo</a></li>
         <li><b>SD-198 (processed)</b> — pre-processing and label maps. <a href="{{ repo }}">Repo</a></li>
       </ul>
-    </section>
+    </section> -->
 
     <section id="contact" class="grid cols-2">
       <div>
         <h2>Contact</h2>
-        <p>Email: <a href="mailto:{{ your-email }}"> {{ your-email }} </a></p>
-        <p>Office: {{ Building/Room }}, Cardiff University</p>
-        <p>ORCID: <a href="{{ ORCID URL }}" target="_blank" rel="noopener">{{ ORCID ID }}</a></p>
-        <p>For collaboration or dataset access, please get in touch.</p>
+        <p>Email: <a href="mailto:{{ wangq79@cardiff.ac.uk }}"> WangQ79@cardiff.ac.uk </a></p>
+        <p>Office: {{3.48}}, Abacws Building, Cardiff University</p>
+        <!-- <p>ORCID: <a href="{{ ORCID URL }}" target="_blank" rel="noopener">{{ ORCID ID }}</a></p> -->
+        <p>For collaboration, please get in touch.</p>
       </div>
       <div class="card">
         <h3>Quick Links</h3>
